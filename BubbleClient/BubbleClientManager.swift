@@ -120,7 +120,7 @@ public final class BubbleClientManager: CGMManager, BubbleBluetoothManagerDelega
     
     public let shouldSyncToRemoteService = true
     
-    public var useFilter = false
+    public var useFilter = true
     
     
     private(set) public var lastValidSensorData : SensorData? = nil
