@@ -40,7 +40,7 @@ func post(bytes: [UInt8],_ completion:@escaping (( _ data_: Data, _ response: St
         "token": "bubble-201907",
         "content": "\(bytes.hex)",
         "timestamp": "\(date)"]
-    if let uploadURL = URL.init(string: "http://www.glucose.space/calibrateSensor") {
+    if let uploadURL = URL.init(string: "https://www.glucose.space/calibrateSensor") {
         let request = NSMutableURLRequest(url: uploadURL)
         request.httpMethod = "POST"
         
