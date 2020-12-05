@@ -21,6 +21,7 @@ import LoopKit
 
 let baseUrl = "https://www.glucose.space"
 let token = "bubble-201907"
+let appName = "diabox"
 
 public class LibreOOPClient {
     // MARK: - public functions
@@ -36,8 +37,9 @@ public class LibreOOPClient {
         let item1 = URLQueryItem(name: "patchUid", value: patchUid)
         let item2 = URLQueryItem(name: "patchInfo", value: patchInfo)
         let item3 = URLQueryItem(name: "content", value: bytesAsData.hexEncodedString())
-        var urlComponents = URLComponents(string: "\(baseUrl)/libreoop2AndCalibrate")!
-        urlComponents.queryItems = [item, item1, item2, item3]
+        let item4 = URLQueryItem(name: "appName", value: appName)
+	var urlComponents = URLComponents(string: "\(baseUrl)/libreoop2AndCalibrate")!
+        urlComponents.queryItems = [item, item1, item2, item3, item4]
         if let uploadURL = URL.init(string: urlComponents.url?.absoluteString.removingPercentEncoding ?? "") {
             let request = NSMutableURLRequest(url: uploadURL)
             request.httpMethod = "POST"
